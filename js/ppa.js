@@ -29,4 +29,24 @@ function initMap() {
     
     var editFeatures = L.geoJson().addTo(map);
     editFeatures.addData(geojsonFeature);
+
+    function addPoint(e) {
+        
+        var thisPoint = {
+            "type": "Feature",
+            "properties": {
+                "name": "Weedon Island Preserve",
+                "amenity": "Cultural Resource",
+                "popupContent": "This shard is located at " + e.latlng.toString()
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [e.latlng.lng, e.latlng.lat]
+            }
+        }
+        
+        editFeatures.addData(thisPoint);
+    }
+    
+    map.on('click', addPoint);
 }
