@@ -49,4 +49,14 @@ function initMap() {
     }
     
     map.on('click', addPoint);
+    
+    // Either make the ajax and pass the entire editFeatures object
+    // or parse it here and submit the latlngs
+    // Also need to watch out for jQuery submit() issues outside of a form
+    $('#calculateButton').submit(function() {
+        editFeatures.eachLayer(function(layer) {
+            console.log(layer.getLatLng());
+        });
+    });
+    
 }
