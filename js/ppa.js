@@ -1,4 +1,5 @@
 var map;
+var coords = [];
 
 function initMap() {
     // Leaflet Map
@@ -50,13 +51,25 @@ function initMap() {
     
     map.on('click', addPoint);
     
-    // Either make the ajax and pass the entire editFeatures object
-    // or parse it here and submit the latlngs
-    // Also need to watch out for jQuery submit() issues outside of a form
-    $('#calculateButton').submit(function() {
+    $('#calculateButton').click(function() {
         editFeatures.eachLayer(function(layer) {
             console.log(layer.getLatLng());
+            coord = layer.getLatLng();
+            lat = coord.lat;
+            lng = coord.lng;
+            coords.push([lat,lng]);
         });
+        
+        $.ajax({
+            url: 'http://localhost:3000/nndist',
+            cache: false,
+            data: JSON.stringify(coords),
+            dataType: "jsonp",
+            success: function(responseData) {
+                // Do something with the response......................
+            }
+        });
+        
     });
     
 }
