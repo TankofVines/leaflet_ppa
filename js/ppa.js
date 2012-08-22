@@ -61,12 +61,16 @@ function initMap() {
         });
         
         $.ajax({
-            url: 'http://localhost:3000/nndist',
+            url: 'http://23.21.65.194:3000/nndist',
             cache: false,
-            data: JSON.stringify(coords),
+            data: {
+                coordinates: JSON.stringify(coords)
+                },
             dataType: "jsonp",
             success: function(responseData) {
                 // Do something with the response......................
+                console.log(responseData);
+                alert(responseData);
             }
         });
         
