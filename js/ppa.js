@@ -1,5 +1,6 @@
 var map;
 var coords = [];
+var proj = L.Projection.Mercator;
 
 function initMap() {
     // Leaflet Map
@@ -53,11 +54,11 @@ function initMap() {
     
     $('#calculateButton').click(function() {
         editFeatures.eachLayer(function(layer) {
-            console.log(layer.getLatLng());
-            coord = layer.getLatLng();
-            lat = coord.lat;
-            lng = coord.lng;
-            coords.push([lat,lng]);
+            console.log(proj.project(layer.getLatLng()));
+            coord = proj.project(layer.getLatLng());
+            northing = coord.x;
+            easting = coord.y;
+            coords.push([northing,easting]);
         });
         
         $.ajax({
