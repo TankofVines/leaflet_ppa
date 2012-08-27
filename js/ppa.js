@@ -4,7 +4,9 @@ var proj = L.Projection.Mercator;
 
 function initMap() {
     // Leaflet Map
-    map = new L.Map('map');
+    map = new L.Map('map', {
+        doubleClickZoom: false
+    });
     
     // Initial location
     var intialPoint = new L.LatLng(27.841845, -82.598578);
