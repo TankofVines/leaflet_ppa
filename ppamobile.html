@@ -1,28 +1,32 @@
 <!DOCTYPE html> 
 <html> 
-	<head> 
-	<title>ppa</title> 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
-	<link rel="stylesheet" href="js/leaflet/dist/leaflet.css" />
-	<link rel="stylesheet" href="css/ppa.css" />
-	<script src="js/jquery-1.7.2.min.js"></script>
-	<script src="js/jquery.mobile-1.1.1.js"></script>
-	<script src="js/leaflet/dist/leaflet.js"></script>
-	<script src="js/ppa.js"></script>
-</head> 
-<body onload="initMap();"> 
+	<head>
+		<meta charset="utf-8" />
+		<title>ppa</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<link rel="stylesheet" href="js/leaflet/dist/leaflet.css" />
+		<link rel="stylesheet" href="css/ppa.css" />
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/jquery.mobile-1.1.1.js"></script>
+		<script src="js/leaflet/dist/leaflet.js"></script>
+		<script src="js/ppa.js"></script>
+	</head> 
+	<body onload="initMap();"> 
 
-<div data-role="page">
-	<div data-role="header">
-		<a href="ppamobile.html" data-icon="" onClick="window.location.reload()">Clear</a>
-		<h1 id="heading">Weedon Island Potsherd Monitoring Tool</h1>
-		<input id="calculateButton" type="submit" value="Calculate" class="ui-btn-right" data-mini="true" data-inline="true"/>
-	</div><!-- /header -->
-	<div data-role="content" id="map"></div>
-	<div data-role="footer">
-	</div>
-</div><!-- /page -->
+		<div data-role="page">
+			<div data-role="header">
+				<a href="ppamobile.html" data-icon="" onClick="window.location.reload()">Clear</a>
+				<h1 id="heading">Weedon Island Potsherd Monitoring Tool</h1>
+				<!-- <input id="calculateButton" type="submit" value="Calculate" class="ui-btn-right" data-mini="true" data-inline="true"/> -->
+				<a data-role="button" id="calculateButton" class="ui-btn-right">
+		            Calculate
+		        </a>
+			</div><!-- /header -->
+			<div data-role="content" id="map"></div>
+			<div data-role="footer">
+			</div>
+		</div><!-- /page -->
 
-</body>
+	</body>
 </html>

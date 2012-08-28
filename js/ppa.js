@@ -73,7 +73,13 @@ function initMap() {
             success: function(responseData) {
                 // Do something with the response......................
                 console.log(responseData);
-                alert(responseData);
+                // alert(responseData);
+                $.mobile.changePage("results.html", {
+                    transition: "slidefade",
+                    reverse: false,
+                    changeHash: true
+                });
+                
             }
         });
         
