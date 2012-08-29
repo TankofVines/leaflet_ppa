@@ -22,11 +22,20 @@
 				<a data-role="button" id="calculateButton" class="ui-btn-right">
 		            Calculate
 		        </a>
+		        <a id="results-link" href="#results-dialog" data-rel="dialog" data-transition="pop">Open dialog</a>
 			</div><!-- /header -->
-			<div data-role="content" id="map"></div>
+			<div data-role="content" id="map">
+			</div
 			<div data-role="footer">
 			</div>
 		</div><!-- /page -->
 
+		<div id="results-dialog" data-role="page">
+			<div data-role="header">
+				<h2>Results</h2>
+				<div id="results-content" data-role="content">
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

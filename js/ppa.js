@@ -74,12 +74,8 @@ function initMap() {
                 // Do something with the response......................
                 console.log(responseData);
                 // alert(responseData);
-                $.mobile.changePage("results.html", {
-                    transition: "slidefade",
-                    reverse: false,
-                    changeHash: true
-                });
-                
+                $("#results-content").html('<p>Mean nearest neighbor distance:    ' + responseData + ' meters</p>');
+                $("#results-link").click();
             }
         });
         

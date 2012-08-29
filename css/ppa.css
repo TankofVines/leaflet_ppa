@@ -10,5 +10,9 @@ body {
 }
 
 #heading {
-	font-style: bold;
+	font-weight: bold;
+}
+
+#results-link {
+	display: none;
 }
