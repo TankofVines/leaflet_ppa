@@ -16,7 +16,8 @@
 
 		<div data-role="page">
 			<div data-role="header">
-				<a href="ppamobile.html" data-icon="" onClick="window.location.reload()">Clear</a>
+				<!-- <a id="clear-button" href="ppamobile.html" data-icon="">Clear</a> -->
+				<input id="clear-button" data-role="button" type="reset" value="Clear" class="ui-btn-left" data-inline="true" data-mini="true"/>
 				<h1 id="heading">Weedon Island Potsherd Monitoring Tool</h1>
 				<!-- <input id="calculateButton" type="submit" value="Calculate" class="ui-btn-right" data-mini="true" data-inline="true"/> -->
 				<a data-role="button" id="calculateButton" class="ui-btn-right">
@@ -33,8 +34,11 @@
 		<div id="results-dialog" data-role="page">
 			<div data-role="header">
 				<h2>Results</h2>
-				<div id="results-content" data-role="content">
-				</div>
+			</div>
+			<div id="results-content" data-role="content">
+			</div>
+			<div data-role="footer" id="results-dialog-footer">
+				<a id="dialog-close-button" data-role="button" data-inline="false" href="ppamobile.html">OK</a>
 			</div>
 		</div>
 	</body>

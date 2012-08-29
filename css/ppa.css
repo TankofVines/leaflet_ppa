@@ -16,3 +16,9 @@ body {
 #results-link {
 	display: none;
 }
+
+#dialog-close-button {
+	width: 150px;
+	margin: 2px;
+	float: right;
+}
