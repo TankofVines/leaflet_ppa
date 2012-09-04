@@ -2,11 +2,20 @@ var map;
 var coords = [];
 var proj = L.Projection.Mercator;
 
+
+
 function initMap() {
+    
     // New leaflet Map
     map = new L.Map('map', {
         doubleClickZoom: false
     });
+    
+    // var southWest = new L.LatLng(27.821, -82.617);
+    // var northEast = new L.LatLng(27.861, -82.583);
+//         
+    // var bounds = new L.LatLngBounds(southWest, northEast);
+    // map.setMaxBounds(bounds);
     
     // Initial location
     var intialPoint = new L.LatLng(27.841845, -82.598578);
@@ -74,7 +83,7 @@ function initMap() {
         });
         
         $.ajax({
-            url: 'http://23.21.65.194:3000/nndist',
+            url: 'http://nodeppa-kas673.rhcloud.com/nndist',
             cache: false,
             data: {
                 coordinates: JSON.stringify(coords)
