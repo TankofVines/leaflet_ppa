@@ -2,8 +2,6 @@ var map;
 var coords = [];
 var proj = L.Projection.Mercator;
 
-
-
 function initMap() {
     
     // New leaflet Map
@@ -41,6 +39,10 @@ function initMap() {
     map.setView(intialPoint, 14);
     map.addLayer(streetMapLayer);
     
+    var weedonBounds = new L.AgsDynamicLayer(
+        'http://23.21.173.219/ArcGIS/rest/services/WeedonBounds/MapServer'
+        );
+    map.addLayer(weedonBounds);
     // Create feature editor for use in the function below
     var editFeatures = L.geoJson().addTo(map);
     // editFeatures.addData(geojsonFeature);
