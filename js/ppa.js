@@ -84,21 +84,36 @@ function initMap() {
             coords.push([northing,easting]);
         });
         
-        $.ajax({
-            url: 'http://nodeppa-kas673.rhcloud.com/nndist',
-            cache: false,
-            data: {
-                coordinates: JSON.stringify(coords)
-                },
-            dataType: "jsonp",
-            success: function(responseData) {
-                console.log(responseData);
-                coords = [];
+        maxCount = 100;
+        var responseDataHolder;
+        start = new Date().getTime();
+        
+        function testing(n) {
+            if(n < maxCount) {
+        
+                $.ajax({
+                    url: 'http://localhost:3000/nndist',
+                    cache: false,
+                    data: {
+                        coordinates: JSON.stringify(coords)
+                        },
+                    dataType: "jsonp",
+                    success: function(responseData) {
+                        console.log(responseData);
+                        responseDataHolder = responseData;
+                        testing(n + 1);
+                    }
+                });
+            
+            } else {
                 // alert(responseData);
-                $("#results-content").html('<p>Mean nearest neighbor distance:    ' + responseData + ' meters</p>');
+                $("#results-content").html('<p>Mean nearest neighbor distance:    ' + responseDataHolder + ' meters</p>');
                 $("#results-link").click();
+                elapsed = new Date().getTime() - start;
+                console.log("Measured time: " + elapsed);
             }
-        });
+        }
+        testing(0);
         
     });
     
